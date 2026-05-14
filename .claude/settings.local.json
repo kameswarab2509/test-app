@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL \"https://raw.githubusercontent.com/apache/maven-wrapper/main/maven-wrapper-distribution/src/resources/mvnw\" -o \"D:/Kamesh-POC/test-app/mvnw\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/apache/maven-wrapper/main/maven-wrapper-distribution/src/resources/mvnw.cmd\" -o \"D:/Kamesh-POC/test-app/mvnw.cmd\")",
+      "Bash(chmod +x \"D:/Kamesh-POC/test-app/mvnw\")",
+      "Bash(curl -k -sL \"https://raw.githubusercontent.com/apache/maven-wrapper/main/maven-wrapper-distribution/src/resources/mvnw\" -o \"D:/Kamesh-POC/test-app/mvnw\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(curl -k -sL \"https://raw.githubusercontent.com/apache/maven-wrapper/main/maven-wrapper-distribution/src/resources/mvnw.cmd\" -o \"D:/Kamesh-POC/test-app/mvnw.cmd\")",
+      "Bash(./mvnw --version)"
+    ]
+  }
+}
