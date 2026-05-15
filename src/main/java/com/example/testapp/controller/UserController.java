@@ -59,17 +59,17 @@ public class UserController {
     /**
      * @return String
      */
-    @GetMapping("/checkUserExeception")
+     @GetMapping("/checkUserExeception")
     public ResponseEntity<String> checkUserExeception() {
         logger.info("GET /api/checkUserExeception - check User Exeception");
-        Map<String, String> testmap = new HashMap<>();
-
+        Map<String,String> testmap= null;
+      
         try {
-            String value = testmap.get("testKey");
-            logger.info("checking testmap value: {}", value);
+             logger.info("checking testmap ", testmap.get("testKey"));
         } catch (Exception e) {
-            logger.error("Exception in checkUserExeception", e);
+            logger.error("{}",e);
         }
         return ResponseEntity.status(HttpStatus.OK).body("API called");
     }
+
 }
