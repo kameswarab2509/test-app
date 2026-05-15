@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -61,12 +62,18 @@ public class UserController {
     @GetMapping("/checkUserExeception")
     public ResponseEntity<String> checkUserExeception() {
         logger.info("GET /api/checkUserExeception - check User Exeception");
-        Map<String,String> testmap= null;
-      
+        Map<String, String> testmap = new HashMap<>();
+        testmap.put("testKey", "testValue");
+
         try {
-             logger.info("checking testmap ", testmap.get("testKey"));
+            if (testmap != null) {
+                String value = testmap.get("testKey");
+                logger.info("checking testmap value: {}", value);
+            } else {
+                logger.warn("testmap is null, skipping get");
+            }
         } catch (Exception e) {
-            logger.error("{}",e);
+            logger.error("Unexpected error while checking testmap", e);
         }
         return ResponseEntity.status(HttpStatus.OK).body("API called");
     }
