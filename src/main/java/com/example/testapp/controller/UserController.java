@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/users")
@@ -52,5 +53,21 @@ public class UserController {
         logger.info("DELETE /api/users/{} - deleting user", id);
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
+    }
+
+    /**
+     * @return String
+     */
+    @GetMapping("/checkUserExeception")
+    public ResponseEntity<String> checkUserExeception() {
+        logger.info("GET /api/checkUserExeception - check User Exeception");
+        Map<String,String> testmap= null;
+      
+        try {
+             logger.info("checking testmap ", testmap.get("testKey"));
+        } catch (Exception e) {
+            logger.error("{}",e);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body("API called");
     }
 }
