@@ -62,12 +62,15 @@ public class UserController {
     @GetMapping("/checkUserExeception")
     public ResponseEntity<String> checkUserExeception() {
         logger.info("GET /api/checkUserExeception - check User Exeception");
-        Map<String, String> testmap = null;
+        // Initialise the map so that get() does not throw a NullPointerException.
+        Map<String, String> testmap = new HashMap<>();
 
         try {
             logger.info("checking testmap value: {}", testmap.get("testKey"));
         } catch (Exception e) {
-            logger.error("{}", e);
+            // Pass the exception as the Throwable cause (no placeholder) so that
+            // SLF4J prints the full stack trace instead of just e.toString().
+            logger.error("Exception in checkUserExeception", e);
         }
         return ResponseEntity.status(HttpStatus.OK).body("API called");
     }
