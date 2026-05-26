@@ -1,0 +1,15 @@
+I want to create a Web based application to Generate Presention.
+This application will be having below modules
+1. Data Source Configuration
+   Data Source shloud accept, Database, Files, Json and API
+2. Template Configuration
+    I shloud able to configure template with multiple slides, each slide can have multiple objects (need Microsoft PPT like UI). 
+     Slide Objects must have all differnt charts, table, image uploads, tables etc.. 
+3. Mapping Data source with Templates with Live Preview
+    I can Map all slide objects with Data Source based on selections. I shoud have recursive slides while mapping to Data Source.
+    Please have intellengce to understand tables/objects map to slides objects accodingly
+4. Genarating Presentation
+   This module shloud generate PPT. Maintain all PPT Genaration history using some listing screen. 
+
+We will enahance more soon.
+Use Java Springboot as backend and Angualr as front end. H2 as DB for now, we can switch with other RDBMS. please create plan and show
